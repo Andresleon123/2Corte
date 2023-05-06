@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/proyecto_2corte"
+    app:startDestination="@id/inicioFragment">
+
+    <fragment
+        android:id="@+id/inicioFragment"
+        android:name="com.example.a2corte.InicioFragment"
+        android:label="fragment_inicio"
+        tools:layout="@layout/fragment_inicio" >
+        <action
+            android:id="@+id/entrar"
+            app:destination="@id/terceraBlankFragment" />
+        <action
+            android:id="@+id/registrarse"
+            app:destination="@id/segundoBlankFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/segundoBlankFragment"
+        android:name="com.example.a2corte.segundoBlankFragment"
+        android:label="fragment_segundo_blank"
+        tools:layout="@layout/fragment_segundo_blank" >
+        <action
+            android:id="@+id/ingresar"
+            app:destination="@id/terceraBlankFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/terceraBlankFragment"
+        android:name="com.example.a2corte.terceraBlankFragment"
+        android:label="fragment_tercera_blank"
+        tools:layout="@layout/fragment_tercera_blank" >
+        <action
+            android:id="@+id/svg_mano"
+            app:destination="@id/cuartaBlankFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cuartaBlankFragment"
+        android:name="com.example.a2corte.cuartaBlankFragment"
+        android:label="fragment_cuarta_blank"
+        tools:layout="@layout/fragment_cuarta_blank" >
+        <action
+            android:id="@+id/comprar"
+            app:destination="@id/terceraBlankFragment" />
+    </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.a2corte.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+
+</navigation>
