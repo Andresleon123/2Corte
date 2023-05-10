@@ -6,7 +6,7 @@ public class LibreriaCont {
 
     public static abstract class LibreriaEntry implements BaseColumns {
 
-        public static final String TABLE_LIBRERIA2 ="ComprarL";
+        public static final String TABLE_LIBRERIA2 ="libro";
 
         public static final String CODIGO = "codigo";
         public static final String LIBROCOMPRA = "libroCompra";

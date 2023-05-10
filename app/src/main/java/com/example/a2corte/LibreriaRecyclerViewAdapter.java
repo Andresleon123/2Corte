@@ -12,7 +12,7 @@ import com.example.a2corte.data.Libreria;
 
 public class LibreriaRecyclerViewAdapter extends RecyclerView.Adapter<LibreriaRecyclerViewAdapter.ViewHolder>{
 
-    private Cursor cursorListaPersonas;
+    private Cursor cursorListaLibros;
     private OnItemClickListener listenerClick;
 
     public LibreriaRecyclerViewAdapter(OnItemClickListener listenerClick) {
@@ -32,53 +32,53 @@ public class LibreriaRecyclerViewAdapter extends RecyclerView.Adapter<LibreriaRe
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        cursorListaPersonas.moveToPosition(position);
-        Libreria personaSeleccionada = new Libreria( cursorListaPersonas );
-        holder.idPersona.setText( Integer.toString(personaSeleccionada.getcodigo()) );
-        holder.usuarioPer.setText( personaSeleccionada.getlibroCompra() );
-        holder.contraseñaPer.setText( personaSeleccionada.getautorr() );
+        cursorListaLibros.moveToPosition(position);
+        Libreria personaSeleccionada = new Libreria( cursorListaLibros );
+        holder.codigo.setText( Integer.toString(personaSeleccionada.getcodigo()) );
+        holder.libroCompra.setText( personaSeleccionada.getlibroCompra() );
+        holder.autor.setText( personaSeleccionada.getautorr() );
     }
 
     @Override
     public int getItemCount() {
-        if (cursorListaPersonas!=null)
-            return cursorListaPersonas.getCount();
+        if (cursorListaLibros!=null)
+            return cursorListaLibros.getCount();
         return 0;
     }
 
     public void swapCursor(Cursor nuevoCursor){
         if(nuevoCursor!=null){
-            cursorListaPersonas = nuevoCursor;
+            cursorListaLibros = nuevoCursor;
             notifyDataSetChanged();
         }
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        TextView idPersona;
-        TextView usuarioPer;
-        TextView contraseñaPer;
+        TextView codigo;
+        TextView libroCompra;
+        TextView autor;
 
         public ViewHolder(View itemView) {
             super( itemView );
-            idPersona = (TextView) itemView.findViewById( R.id.idPersona );
-            usuarioPer = (TextView) itemView.findViewById( R.id.usuarioPer );
-            contraseñaPer = (TextView) itemView.findViewById( R.id.contraseñaPer );
+            codigo = (TextView) itemView.findViewById( R.id.codigo );
+            libroCompra = (TextView) itemView.findViewById( R.id.libroCompra );
+            autor = (TextView) itemView.findViewById( R.id.autor );
             itemView.setOnClickListener( this );
         }
 
         @Override
         public void onClick(View v) {
             Libreria libreriaActualizada = obtenerUsuario( getAdapterPosition() );
-            libreriaActualizada.setNombrePersona( "Leon" );
-            listenerClick.onClick( this,libroActualizada );
+            libreriaActualizada.setNombrelibro( "LEON" );
+            listenerClick.onClick( this,LibreriaActualizada );
         }
     }
 
-    private Persona obtenerUsuario (int posicion){
-        if (cursorListaPersonas!=null){
-            cursorListaPersonas.moveToPosition( posicion );
-            Persona nuevoUsuario = new Persona( cursorListaPersonas );
+    private Libreria obtenerUsuario (int posicion){
+        if (cursorListaLibros!=null){
+            cursorListaLibros.moveToPosition( posicion );
+            Libreria nuevoUsuario = new Libreria( cursorListaLibros );
             return nuevoUsuario;
         }
         return null;

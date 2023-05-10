@@ -5,7 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import static com.example.a2corte.data.PersonaCont.PersonaEntry;
+import static com.example.a2corte.data.LibreriaCont.LibreriaEntry;
 
 public class LibreriaDao extends SQLiteOpenHelper {
 
@@ -18,12 +18,12 @@ public class LibreriaDao extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE " + PersonaEntry.TABLE_LIBRERIA2 + " ("
-                + PersonaEntry._CODIGO + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + PersonaEntry.CODIGO + " INTEGER NOT NULL,"
-                + PersonaEntry.LIBROCOMPRA + " TEXT NOT NULL,"
-                + PersonaEntry.AUTOR + " TEXT NOT NULL,"
-                + "UNIQUE (" + PersonaEntry.CODIGO + "))");
+        db.execSQL("CREATE TABLE " + LibreriaEntry.TABLE_LIBRERIA2 + " ("
+                + LibreriaEntry._COUNT + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                + LibreriaEntry.CODIGO + " INTEGER NOT NULL,"
+                + LibreriaEntry.LIBROCOMPRA + " TEXT NOT NULL,"
+                + LibreriaEntry.AUTOR + " TEXT NOT NULL,"
+                + "UNIQUE (" + LibreriaEntry.CODIGO + "))");
     }
 
     @Override
@@ -35,16 +35,16 @@ public class LibreriaDao extends SQLiteOpenHelper {
         SQLiteDatabase sqLiteDatabase = getWritableDatabase();
 
         return sqLiteDatabase.insert(
-                PersonaEntry.TABLE_LIBRERIA2,
+                LibreriaEntry.TABLE_LIBRERIA2,
                 null,
-                persona.toContentValues());
+                libreria.toContentValues());
 
     }
 
     public Cursor getAllLibreria() {
         return getReadableDatabase()
                 .query(
-                        PersonaEntry.TABLE_LIBRERIA2,
+                        LibreriaEntry.TABLE_LIBRERIA2,
                         null,
                         null,
                         null,
@@ -55,9 +55,9 @@ public class LibreriaDao extends SQLiteOpenHelper {
 
     public Cursor getLibreriaById(String lawyerId) {
         Cursor c = getReadableDatabase().query(
-                PersonaEntry.TABLE_LIBRERIA2,
+                LibreriaEntry.TABLE_LIBRERIA2,
                 null,
-                PersonaEntry.CODIGO + " LIKE ?",
+                LibreriaEntry.CODIGO + " LIKE ?",
                 new String[]{lawyerId},
                 null,
                 null,
@@ -67,16 +67,16 @@ public class LibreriaDao extends SQLiteOpenHelper {
 
     public int deleteLibreria(String lawyerId) {
         return getWritableDatabase().delete(
-                PersonaEntry.TABLE_LIBRERIA2,
-                PersonaEntry.CODIGO + " LIKE ?",
+                LibreriaEntry.TABLE_LIBRERIA2,
+                LibreriaEntry.CODIGO + " LIKE ?",
                 new String[]{lawyerId});
     }
 
     public int updateLibreria(Libreria persona, String lawyerId) {
         return getWritableDatabase().update(
-                PersonaEntry.TABLE_LIBRERIA2,
+                LibreriaEntry.TABLE_LIBRERIA2,
                 persona.toContentValues(),
-                PersonaEntry.CODIGO + " LIKE ?",
+                LibreriaEntry.CODIGO + " LIKE ?",
                 new String[]{lawyerId}
         );
     }

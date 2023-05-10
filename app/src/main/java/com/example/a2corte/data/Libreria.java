@@ -3,30 +3,30 @@ package com.example.a2corte.data;
 import android.content.ContentValues;
 import android.database.Cursor;
 
-import static com.example.a2corte.data.PersonaCont.PersonaEntry;
+import static com.example.a2corte.data.LibreriaCont.LibreriaEntry;
 
 public class Libreria {
     private int codigo;
     private String libroCompra;
-    private String autorr;
+    private String autor;
 
     public Libreria(int Codigo, String LibroCompra, String Autor) {
         this.codigo = Codigo;
         this.libroCompra = LibroCompra;
-        this.autorr = Autor;
+        this.autor = Autor;
     }
 
     public Libreria(Cursor cursor) {
-        codigo = cursor.getInt(cursor.getColumnIndex(PersonaEntry.CODIGO));
-        libroCompra= cursor.getString(cursor.getColumnIndex( PersonaEntry.LIBROCOMPRA));
-        autorr = cursor.getString( cursor.getColumnIndex( PersonaEntry.AUTOR ) );
+        codigo = cursor.getInt(cursor.getColumnIndex(LibreriaCont.LibreriaEntry.CODIGO));
+        libroCompra= cursor.getString(cursor.getColumnIndex( LibreriaCont.LibreriaEntry.LIBROCOMPRA));
+        autor = cursor.getString( cursor.getColumnIndex( LibreriaCont.LibreriaEntry.AUTOR ) );
     }
 
     public ContentValues toContentValues() {
         ContentValues values = new ContentValues();
-            values.put( PersonaEntry.CODIGO, codigo);
-        values.put(PersonaEntry.LIBROCOMPRA, libroCompra);
-        values.put(PersonaEntry.AUTOR,autorr);
+            values.put( LibreriaCont.LibreriaEntry.CODIGO, codigo);
+        values.put(LibreriaCont.LibreriaEntry.LIBROCOMPRA, libroCompra);
+        values.put(LibreriaCont.LibreriaEntry.AUTOR, autor);
         return values;
     }
 
@@ -47,10 +47,10 @@ public class Libreria {
     }
 
     public String getautorr() {
-        return autorr;
+        return autor;
     }
 
-    public void setautorr(String autorr) {
-        this.autorr = autorr;
+    public void setautor(String autor) {
+        this.autor = autor;
     }
 }
