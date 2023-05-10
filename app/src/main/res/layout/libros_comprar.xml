@@ -35,4 +35,11 @@
         android:text="Autor"
         android:textSize="24sp" />
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="29dp"
+        android:layout_weight="1"
+        app:srcCompat="@android:drawable/button_onoff_indicator_off" />
+
 </LinearLayout>
