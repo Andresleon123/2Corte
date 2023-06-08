@@ -31,25 +31,14 @@
             android:layout_marginEnd="2dp"
             android:text="REGISTRARSE" />
 
-        <TextView
-            android:id="@+id/Usuario"
-            android:layout_width="194dp"
-            android:layout_height="49dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="270dp"
-            android:layout_marginEnd="99dp"
-            android:text="Usuario"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
-
         <EditText
             android:id="@+id/Password"
             android:layout_width="328dp"
             android:layout_height="55dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="317dp"
-            android:layout_marginEnd="33dp"
+            android:layout_marginTop="332dp"
+            android:layout_marginEnd="31dp"
             android:ems="10"
             android:inputType="textPassword"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
@@ -67,6 +56,18 @@
             android:layout_marginEnd="14dp"
             android:layout_marginBottom="439dp"
             tools:listitem="@layout/usuario_item_layout" />
+
+        <EditText
+            android:id="@+id/usuario"
+            android:layout_width="326dp"
+            android:layout_height="58dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="31dp"
+            android:layout_marginTop="275dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Usuario" />
 
     </RelativeLayout>
 </FrameLayout>
