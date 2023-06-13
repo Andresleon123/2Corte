@@ -1,8 +1,10 @@
-package com.example.a2corte;
+package app.program.a2corte;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.a2corte.R;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -1,11 +1,9 @@
-package com.example.a2corte.data;
+package app.program.a2corte.data;
 
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
-import static com.example.a2corte.data.PersonaCont.PersonaEntry;
 
 public class Daolibreria extends SQLiteOpenHelper {
 
@@ -18,12 +16,12 @@ public class Daolibreria extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE " + PersonaEntry.TABLE_NAME + " ("
-                + PersonaEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + PersonaEntry.ID + " INTEGER NOT NULL,"
-                + PersonaEntry.NAME + " TEXT NOT NULL,"
-                + PersonaEntry.PASSWORD + " TEXT NOT NULL,"
-                + "UNIQUE (" + PersonaEntry.ID + "))");
+        db.execSQL("CREATE TABLE " + PersonaCont.PersonaEntry.TABLE_NAME + " ("
+                + PersonaCont.PersonaEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                + PersonaCont.PersonaEntry.ID + " INTEGER NOT NULL,"
+                + PersonaCont.PersonaEntry.NAME + " TEXT NOT NULL,"
+                + PersonaCont.PersonaEntry.PASSWORD + " TEXT NOT NULL,"
+                + "UNIQUE (" + PersonaCont.PersonaEntry.ID + "))");
     }
 
     @Override
@@ -35,7 +33,7 @@ public class Daolibreria extends SQLiteOpenHelper {
         SQLiteDatabase sqLiteDatabase = getWritableDatabase();
 
         return sqLiteDatabase.insert(
-                PersonaEntry.TABLE_NAME,
+                PersonaCont.PersonaEntry.TABLE_NAME,
                 null,
                 persona.toContentValues());
 
@@ -44,7 +42,7 @@ public class Daolibreria extends SQLiteOpenHelper {
     public Cursor getAllPersonas() {
         return getReadableDatabase()
                 .query(
-                        PersonaEntry.TABLE_NAME,
+                        PersonaCont.PersonaEntry.TABLE_NAME,
                         null,
                         null,
                         null,
@@ -55,9 +53,9 @@ public class Daolibreria extends SQLiteOpenHelper {
 
     public Cursor getPersonaById(String lawyerId) {
         Cursor c = getReadableDatabase().query(
-                PersonaEntry.TABLE_NAME,
+                PersonaCont.PersonaEntry.TABLE_NAME,
                 null,
-                PersonaEntry.ID + " LIKE ?",
+                PersonaCont.PersonaEntry.ID + " LIKE ?",
                 new String[]{lawyerId},
                 null,
                 null,
@@ -67,16 +65,16 @@ public class Daolibreria extends SQLiteOpenHelper {
 
     public int deletePersona(String lawyerId) {
         return getWritableDatabase().delete(
-                PersonaEntry.TABLE_NAME,
-                PersonaEntry.ID + " LIKE ?",
+                PersonaCont.PersonaEntry.TABLE_NAME,
+                PersonaCont.PersonaEntry.ID + " LIKE ?",
                 new String[]{lawyerId});
     }
 
     public int updatePersona(Persona persona, String lawyerId) {
         return getWritableDatabase().update(
-                PersonaEntry.TABLE_NAME,
+                PersonaCont.PersonaEntry.TABLE_NAME,
                 persona.toContentValues(),
-                PersonaEntry.ID + " LIKE ?",
+                PersonaCont.PersonaEntry.ID + " LIKE ?",
                 new String[]{lawyerId}
         );
     }

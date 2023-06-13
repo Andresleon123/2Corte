@@ -1,4 +1,4 @@
-package com.example.a2corte;
+package app.program.a2corte;
 
 import android.os.Bundle;
 
@@ -12,8 +12,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.a2corte.data.Daolibreria;
-import com.example.a2corte.data.Persona;
+import com.example.a2corte.R;
+
+import app.program.a2corte.data.Daolibreria;
+import app.program.a2corte.data.Persona;
 
 public class segundoBlankFragment extends Fragment {
 

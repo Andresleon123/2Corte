@@ -1,23 +1,16 @@
-package com.example.a2corte;
+package app.program.a2corte;
 
 import static androidx.navigation.Navigation.findNavController;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link terceraBlankFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class    terceraBlankFragment extends Fragment {
+import com.example.a2corte.R;
+
+public class cuartaBlankFragment extends terceraBlankFragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -28,13 +21,21 @@ public class    terceraBlankFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public terceraBlankFragment() {
-
+    public cuartaBlankFragment() {
+        // Required empty public constructor
     }
 
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     *
+     * @param param1 Parameter 1.
+     * @param param2 Parameter 2.
+     * @return A new instance of fragment cuartaBlankFragment.
+     */
     // TODO: Rename and change types and number of parameters
-    public static terceraBlankFragment newInstance(String param1, String param2) {
-        terceraBlankFragment fragment = new terceraBlankFragment();
+    public static cuartaBlankFragment newInstance(String param1, String param2) {
+        cuartaBlankFragment fragment = new cuartaBlankFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -54,15 +55,14 @@ public class    terceraBlankFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View vista= inflater.inflate(R.layout.fragment_tercera_blank, container, false);
+        View vista=inflater.inflate(R.layout.fragment_cuarta_blank, container, false);
+        Button comprar=vista.findViewById(R.id.coprar);
 
-        ImageButton imageButton=vista.findViewById(R.id.imageButton);
 
-
-        imageButton.setOnClickListener(new View.OnClickListener() {
+        comprar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                findNavController(v).navigate(R.id.cuartaBlankFragment);
+                findNavController(v).navigate(R.id.terceraBlankFragment);
             }
         });
         return vista;

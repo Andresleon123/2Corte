@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/inicioFragment"
-        android:name="com.example.a2corte.InicioFragment"
+        android:name="app.program.a2corte.InicioFragment"
         android:label="fragment_inicio"
         tools:layout="@layout/fragment_inicio" >
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/segundoBlankFragment"
-        android:name="com.example.a2corte.segundoBlankFragment"
+        android:name="app.program.a2corte.segundoBlankFragment"
         android:label="fragment_segundo_blank"
         tools:layout="@layout/fragment_segundo_blank" >
         <action
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/terceraBlankFragment"
-        android:name="com.example.a2corte.terceraBlankFragment"
+        android:name="app.program.a2corte.terceraBlankFragment"
         android:label="fragment_tercera_blank"
         tools:layout="@layout/fragment_tercera_blank" >
         <action
@@ -37,7 +37,7 @@
     </fragment>
     <fragment
         android:id="@+id/cuartaBlankFragment"
-        android:name="com.example.a2corte.cuartaBlankFragment"
+        android:name="app.program.a2corte.cuartaBlankFragment"
         android:label="fragment_cuarta_blank"
         tools:layout="@layout/fragment_cuarta_blank" >
         <action
@@ -46,7 +46,7 @@
     </fragment>
     <activity
         android:id="@+id/mainActivity"
-        android:name="com.example.a2corte.MainActivity"
+        android:name="app.program.a2corte.MainActivity"
         android:label="activity_main"
         tools:layout="@layout/activity_main" />
 

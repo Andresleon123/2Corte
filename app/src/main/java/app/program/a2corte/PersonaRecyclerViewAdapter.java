@@ -1,4 +1,4 @@
-package com.example.a2corte;
+package app.program.a2corte;
 
 import android.database.Cursor;
 import android.view.LayoutInflater;
@@ -9,7 +9,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.a2corte.data.Persona;
+import com.example.a2corte.R;
+
+import app.program.a2corte.data.Persona;
 
 public class PersonaRecyclerViewAdapter extends RecyclerView.Adapter<PersonaRecyclerViewAdapter.ViewHolder>{
 

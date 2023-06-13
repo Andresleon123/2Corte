@@ -1,4 +1,4 @@
-package com.example.a2corte.data;
+package app.program.a2corte.data;
 
 import android.provider.BaseColumns;
 

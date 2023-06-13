@@ -1,9 +1,7 @@
-package com.example.a2corte.data;
+package app.program.a2corte.data;
 
 import android.content.ContentValues;
 import android.database.Cursor;
-
-import static com.example.a2corte.data.PersonaCont.PersonaEntry;
 
 public class Persona {
     private int idPersona;
@@ -17,16 +15,16 @@ public class Persona {
     }
 
     public Persona(Cursor cursor) {
-        idPersona = cursor.getInt(cursor.getColumnIndex(PersonaEntry.ID));
-        nombrePersona= cursor.getString(cursor.getColumnIndex( PersonaEntry.NAME));
-        passwordPersona = cursor.getString( cursor.getColumnIndex( PersonaEntry.PASSWORD ) );
+        idPersona = cursor.getInt(cursor.getColumnIndex(PersonaCont.PersonaEntry.ID));
+        nombrePersona= cursor.getString(cursor.getColumnIndex( PersonaCont.PersonaEntry.NAME));
+        passwordPersona = cursor.getString( cursor.getColumnIndex( PersonaCont.PersonaEntry.PASSWORD ) );
     }
 
     public ContentValues toContentValues() {
         ContentValues values = new ContentValues();
-        values.put( PersonaEntry.ID, idPersona);
-        values.put(PersonaEntry.NAME, nombrePersona);
-        values.put(PersonaEntry.PASSWORD,passwordPersona);
+        values.put( PersonaCont.PersonaEntry.ID, idPersona);
+        values.put(PersonaCont.PersonaEntry.NAME, nombrePersona);
+        values.put(PersonaCont.PersonaEntry.PASSWORD,passwordPersona);
         return values;
     }
 

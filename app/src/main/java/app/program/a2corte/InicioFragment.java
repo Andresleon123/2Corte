@@ -1,4 +1,4 @@
-package com.example.a2corte;
+package app.program.a2corte;
 
 import android.database.Cursor;
 import android.os.AsyncTask;
@@ -15,8 +15,10 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.a2corte.data.Daolibreria;
-import com.example.a2corte.data.Persona;
+import com.example.a2corte.R;
+
+import app.program.a2corte.data.Daolibreria;
+import app.program.a2corte.data.Persona;
 
 
 public class InicioFragment extends Fragment implements View.OnClickListener,PersonaRecyclerViewAdapter.OnItemClickListener{
